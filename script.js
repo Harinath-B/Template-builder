@@ -76,37 +76,12 @@ const block_list = [
   }, {
     id: 'social',
     label: 'Socials',
-    content: `<a name="social" class="fa fa-facebook"></a>
-      <a name="social" class="fa fa-twitter"></a>
-      <a name="social" class="fa fa-instagram"></a>
-      <style>
-        .fa {
-          padding: 20px;
-          font-size: 30px;
-          width: 50px;
-          text-align: center;
-          text-decoration: none;
-        }
-        
-        /* Add a hover effect if you want */
-        .fa:hover {
-          opacity: 0.7;
-        }
-        
-        /* Set a specific color for each brand */
-        
-        /* Facebook */
-        .fa-facebook {
-          background: #3B5998;
-          color: white;
-        }
-        
-        /* Twitter */
-        .fa-twitter {
-          background: #55ACEE;
-          color: white;
-        }
-      </style>`,
+    content: `<div class=social-cont">
+        <a href="#" style="background: #3B5998;" name="social" class="fab fa-facebook"></a>
+        <a href="#" style="background: #00acee;" name="social" class="fab fa-twitter"></a>
+        <a href="#" name="social" class="fab fa-instagram" ></a>
+      </div>
+      <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')</style>`,
   }
 
 ];
