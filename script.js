@@ -62,7 +62,7 @@ const block_list = [
     content: `<div style="height:20px;outline:none;"></div>`,
   }, {
     id: 'input',
-    label: 'input',
+    label: 'Input',
     content: '<input name="my-test" title="hello"/>',
   }, {
     id: 'menu',
@@ -86,7 +86,7 @@ const myNewComponentTypes = editor => {
     model: {
       // Default properties
       defaults: {
-        //draggable: "ul",
+        draggable: "ul",
         droppable: false,
         traits: [
           'name',
@@ -115,6 +115,16 @@ const editor = grapesjs.init({
     layerManager: {
         appendTo: '.layers-container'
     },
+    deviceManager: {
+      devices: [{
+          name: 'Desktop',
+          width: '', // default size
+        }, {
+          name: 'Mobile',
+          width: '320px', // this value will be used on canvas width
+          widthMedia: '480px', // this value will be used in CSS @media
+      }]
+    },
       // We define a default panel as a sidebar to contain layers
     panels: {
       defaults: [{
@@ -132,6 +142,22 @@ const editor = grapesjs.init({
           // instead of the `width` (default)
           keyWidth: 'flex-basis',
         }
+      },
+      {
+        id: 'panel-devices',
+        el: '.panel__devices',
+        buttons: [{
+            id: 'device-desktop',
+            label: 'D',
+            command: 'set-device-desktop',
+            active: true,
+            togglable: false,
+          }, {
+            id: 'device-mobile',
+            label: 'M',
+            command: 'set-device-mobile',
+            togglable: false,
+        }],
       },
       {
         id: 'panel-switcher',
@@ -229,6 +255,13 @@ const editor = grapesjs.init({
       
   });
   
+editor.Commands.add('set-device-desktop', {
+  run: editor => editor.setDevice('Desktop')
+});
+
+editor.Commands.add('set-device-mobile', {
+  run: editor => editor.setDevice('Mobile')
+});
 
 editor.Commands.add('show-layers', {
   getRowEl(editor) { return editor.getContainer().closest('.editor-row'); },
