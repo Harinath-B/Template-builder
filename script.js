@@ -76,12 +76,25 @@ const block_list = [
   }, {
     id: 'social',
     label: 'Socials',
-    content: `<div class=social-cont">
+    content: `<div class="social-cont">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
         <a href="#" style="background: #3B5998;" name="social" class="fab fa-facebook"></a>
         <a href="#" style="background: #00acee;" name="social" class="fab fa-twitter"></a>
-        <a href="#" name="social" class="fab fa-instagram" ></a>
+        <a href="#" style="background: #f09433;" name="social" class="fab fa-instagram" ></a>
       </div>
-      <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')</style>`,
+      <style>
+        .social-cont {
+          display: flex;
+          justify-content: center;
+        }
+        .fab {
+          padding: 3px;
+          font-size: 20px;
+          width: 30px;
+          text-align: center;
+          text-decoration: none;
+        }
+      </style>`,
   }
 
 ];
