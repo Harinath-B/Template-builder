@@ -73,6 +73,12 @@ const block_list = [
     id: 'item',
     label: 'Menu Item',
     content: '<a style="margin: 5px;">Link</a>',
+  }, {
+    id: 'social',
+    label: 'Socials',
+    content: `<a name="social" class="fa fa-facebook"></a>
+      <a name="social" class="fa fa-twitter"></a>
+      <a name="social" class="fa fa-instagram"></a>`,
   }
 
 ];
@@ -92,6 +98,23 @@ const myNewComponentTypes = editor => {
           'name',
           'href',
           'content'
+        ],
+      }
+    }
+  });
+  editor.DomComponents.addType('social-item', {
+    isComponent: el => el.name === 'social',
+
+    model: {
+      // Default properties
+      defaults: {
+        droppable: false,
+        traits: [
+          'name',
+          'href',
+          // 'instagram',
+          // 'facebook',
+          // 'twitter',
         ],
       }
     }
@@ -134,12 +157,10 @@ const editor = grapesjs.init({
         resizable: {
           maxDim: 350,
           minDim: 200,
-          tc: 0, // Top handler
-          cl: 1, // Left handler
-          cr: 0, // Right handler
-          bc: 0, // Bottom handler
-          // Being a flex child we need to change `flex-basis` property
-          // instead of the `width` (default)
+          tc: 0, 
+          cl: 1, 
+          cr: 0, 
+          bc: 0, 
           keyWidth: 'flex-basis',
         }
       },
@@ -206,19 +227,6 @@ const editor = grapesjs.init({
           open: false,
           // Use built-in properties
           buildProps: ['width', 'min-height', 'padding'],
-          // Use `properties` to define/override single property
-          // properties: [
-          //   {
-          //     // Type of the input,
-          //     // options: integer | radio | select | color | slider | file | composite | stack
-          //     type: 'integer',
-          //     name: 'The width', // Label for the property
-          //     property: 'width', // CSS property (if buildProps contains it will be extended)
-          //     units: ['px', '%'], // Units, available only for 'integer' types
-          //     defaults: 'auto', // Default value
-          //     min: 0, // Min value, available only for 'integer' types
-          //   }
-          // ]
         },{
           name: 'Extra',
           open: false,
