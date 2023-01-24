@@ -1,7 +1,7 @@
 const block_list = [
   {
-    id: 'title', // id is mandatory
-    label: '<b>Title</b>', // You can use HTML/SVG inside labels,
+    id: 'title', 
+    label: '<b>Title</b>', 
     content: `<h1 contentEditable>This is a simple title</h1>`,
   }, {
     id: 'text',
@@ -10,13 +10,9 @@ const block_list = [
   }, {
     id: 'image',
     label: 'Image',
-    // Select the component once it's dropped
     select: true,
-    // You can pass components as a JSON instead of a simple HTML string,
-    // in this case we also use a defined component type `image`
     content: { type: 'image' },
-    // This triggers `active` event on dropped components and the `image`
-    // reacts by opening the AssetManager
+    
     activate: true,
   }, {
     id: 'col2',
@@ -77,7 +73,7 @@ const block_list = [
     id: 'social',
     label: 'Socials',
     content: `<div class="social-cont">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <a href="#" style="background: #3B5998;" name="social" class="fab fa-facebook"></a>
         <a href="#" style="background: #00acee;" name="social" class="fab fa-twitter"></a>
         <a href="#" style="background: #f09433;" name="social" class="fab fa-instagram" ></a>
@@ -101,12 +97,9 @@ const block_list = [
 
 const myNewComponentTypes = editor => {
   editor.DomComponents.addType('menu-item', {
-    // Make the editor understand when to bind `my-input-type`
     isComponent: el => el.tagName === 'A',
     
-    // Model definition
     model: {
-      // Default properties
       defaults: {
         draggable: "ul",
         droppable: false,
@@ -122,15 +115,11 @@ const myNewComponentTypes = editor => {
     isComponent: el => el.name === 'social',
 
     model: {
-      // Default properties
       defaults: {
         droppable: false,
         traits: [
           'name',
           'href',
-          // 'instagram',
-          // 'facebook',
-          // 'twitter',
         ],
       }
     }
@@ -139,12 +128,9 @@ const myNewComponentTypes = editor => {
 };
 
 const editor = grapesjs.init({
-    // Indicate where to init the editor. You can also pass an HTMLElement
     container: '#gjs',
-    // Size of the editor
     height: '600px',
     width: 'auto',
-    // Disable the storage manager for the moment
     storageManager: false,
     plugins: [ myNewComponentTypes ],
     blockManager: {
@@ -157,19 +143,19 @@ const editor = grapesjs.init({
     deviceManager: {
       devices: [{
           name: 'Desktop',
-          width: '', // default size
+          width: '', 
         }, {
           name: 'Mobile',
-          width: '320px', // this value will be used on canvas width
-          widthMedia: '480px', // this value will be used in CSS @media
+          width: '320px', 
+          widthMedia: '480px',
       }]
     },
-      // We define a default panel as a sidebar to contain layers
+      
     panels: {
       defaults: [{
         id: 'layers',
         el: '.panel__right',
-        // Make the panel resizable
+        
         resizable: {
           maxDim: 350,
           minDim: 200,
@@ -204,7 +190,7 @@ const editor = grapesjs.init({
             active: true,
             label: 'Layers',
             command: 'show-layers',
-            // Once activated disable the possibility to turn it off
+            
             togglable: false,
         }, {
           id: 'component-mgmt',
@@ -241,7 +227,7 @@ const editor = grapesjs.init({
       sectors: [{
           name: 'Dimension',
           open: false,
-          // Use built-in properties
+          
           buildProps: ['width', 'min-height', 'padding'],
         },{
           name: 'Extra',
@@ -254,7 +240,7 @@ const editor = grapesjs.init({
               property: 'font-size',
               type: 'select',
               defaults: '32px',
-              // List of options, available only for 'select' and 'radio'  types
+              
               options: [
                 { value: '12px', name: 'Tiny' },
                 { value: '18px', name: 'Medium' },
@@ -264,17 +250,17 @@ const editor = grapesjs.init({
           ]
         }]
     },
-    // storageManager: {
-    //   type: 'local', // Type of the storage, available: 'local' | 'remote'
-    //   autosave: true, // Store data automatically
-    //   autoload: true, // Autoload stored data on init
-    //   stepsBeforeSave: 1, // If autosave enabled, indicates how many changes are necessary before store method is triggered
-    //   options: {
-    //     local: { // Options for the `local` type
-    //       key: 'gjsProject', // The key for the local storage
-    //     },
-    //   }
-    // },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
       
   });
@@ -353,16 +339,16 @@ editor.Panels.addPanel({
   buttons: [
     {
       id: 'visibility',
-      active: true, // active by default
+      active: true, 
       className: 'btn-toggle-borders',
       label: '<u>Borders</u>',
-      command: 'sw-visibility', // Built-in command
+      command: 'sw-visibility', 
     }, {
       id: 'export',
       className: 'btn-open-export',
       label: 'Exp',
       command: 'export-template',
-      context: 'export-template', // For grouping context of buttons from the same panel
+      context: 'export-template', 
     }, {
       id: 'show-json',
       className: 'btn-show-json',
