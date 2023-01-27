@@ -233,32 +233,25 @@ const editor = grapesjs.init({
       appendTo: '.styles-container',
       sectors: [{
           name: 'Dimension',
-          open: false,
-          
+          open: false,         
           buildProps: ['width', 'min-height', 'padding'],
         },{
           name: 'Extra',
           open: false,
-          buildProps: ['background-color', 'color', 'custom-prop', 'font'],
+          buildProps: ['background-color', 'color'],
+        }, {
+          name: 'Font',
+          open: false,
+          buildProps: ['font-size', 'font', 'font-weight'],
           properties: [
             {
-              id: 'custom-prop',
+              id: 'font-size',
               name: 'Font Size',
               property: 'font-size',
-              type: 'select',
-              defaults: '32px',
-              
-              options: [
-                {value: '4px'},
-                {value: '8px'},
-                {value: '12px'},
-                {value: '16px'},
-                {value: '20px'},
-                {value: '24px'},
-                {value: '28px'},
-                {value: '32px'},
-                {value: '36px'},
-              ],
+              type: 'slider',
+              default: 20,
+              min: 1,
+              max: 50,
            }, {
             id: 'font',
             name: 'Font',
@@ -267,7 +260,6 @@ const editor = grapesjs.init({
             defaults: 'Arial',
 
             options : [
-              //Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
               {value: 'Cambria'},
               {value: 'Arial'},
               {value: 'serif'},
@@ -275,11 +267,20 @@ const editor = grapesjs.init({
               {value: 'Helvetica'}
             ]
            },
-          ]
-        }]
+          ],
+        }
+      ]
     },   
-  });
-  
+  }
+);
+
+editor.RichTextEditor.add('unorderedList',
+{
+  icon: '<i class="fa fa-list-ul" aria-hidden="true"></i>',
+  attributes: {title: 'Unordered List'},
+  result: rte => rte.exec('insertUnorderedList')
+});  
+
 editor.Commands.add('set-device-desktop', {
   run: editor => editor.setDevice('Desktop')
 });
