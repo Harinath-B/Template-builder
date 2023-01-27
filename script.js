@@ -239,7 +239,7 @@ const editor = grapesjs.init({
         },{
           name: 'Extra',
           open: false,
-          buildProps: ['background-color', 'box-shadow', 'custom-prop', 'font'],
+          buildProps: ['background-color', 'color', 'custom-prop', 'font'],
           properties: [
             {
               id: 'custom-prop',
@@ -274,7 +274,7 @@ const editor = grapesjs.init({
               {value: 'Georgia'},
               {value: 'Helvetica'}
             ]
-           } ,
+           },
           ]
         }]
     },   
