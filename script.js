@@ -232,7 +232,7 @@ const editor = grapesjs.init({
         },{
           name: 'Extra',
           open: false,
-          buildProps: ['background-color', 'box-shadow', 'custom-prop'],
+          buildProps: ['background-color', 'box-shadow', 'custom-prop', 'font'],
           properties: [
             {
               id: 'custom-prop',
@@ -246,7 +246,22 @@ const editor = grapesjs.init({
                 { value: '18px', name: 'Medium' },
                 { value: '32px', name: 'Big' },
               ],
-           }, 
+           }, {
+            id: 'font',
+            name: 'Font',
+            property: 'font-family',
+            type: 'select',
+            defaults: 'Arial',
+
+            options : [
+              //Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+              {value: 'Cambria'},
+              {value: 'Arial'},
+              {value: 'serif'},
+              {value: 'Georgia'},
+              {value: 'Helvetica'}
+            ]
+           } ,
           ]
         }]
     },
