@@ -63,7 +63,14 @@ const block_list = [
   }, {
     id: 'menu',
     label: 'Menu',
-    content: '<ul style="min-height:30px;"></ul>',
+    content: `<ul class="menu"></ul>
+      <style>
+        .menu {
+          min-height:30px;
+          display: flex;
+          justify-content:center;
+        }  
+      </style>`,
     droppable: true,
   }, {
     id: 'item',
@@ -242,9 +249,15 @@ const editor = grapesjs.init({
               defaults: '32px',
               
               options: [
-                { value: '12px', name: 'Tiny' },
-                { value: '18px', name: 'Medium' },
-                { value: '32px', name: 'Big' },
+                {value: '4px'},
+                {value: '8px'},
+                {value: '12px'},
+                {value: '16px'},
+                {value: '20px'},
+                {value: '24px'},
+                {value: '28px'},
+                {value: '32px'},
+                {value: '36px'},
               ],
            }, {
             id: 'font',
@@ -264,20 +277,7 @@ const editor = grapesjs.init({
            } ,
           ]
         }]
-    },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
+    },   
   });
   
 editor.Commands.add('set-device-desktop', {
