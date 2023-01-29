@@ -79,12 +79,8 @@ const block_list = [
   }, {
     id: 'social',
     label: 'Socials',
-    content: `<div class="social-cont">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        <a href="#" style="background: #3B5998;" name="social" class="fab fa-facebook"></a>
-        <a href="#" style="background: #00acee;" name="social" class="fab fa-twitter"></a>
-        <a href="#" style="background: #f09433;" name="social" class="fab fa-instagram" ></a>
-      </div>
+    content: `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+      <a href="#" style="background: #f09433;" name="social" class="fab"></a>
       <style>
         .social-cont {
           display: flex;
@@ -94,6 +90,7 @@ const block_list = [
           padding: 3px;
           font-size: 20px;
           width: 30px;
+          height: 30px;
           text-align: center;
           text-decoration: none;
         }
@@ -127,8 +124,31 @@ const myNewComponentTypes = editor => {
         traits: [
           'name',
           'href',
+          {
+            type: 'select',
+            name: 'type',
+            options: [
+              {id: 'fa-facebook', name: 'Facebook'},
+              {id: 'fa-instagram', name: 'Instagram'},
+              {id: 'fa-twitter', name: 'twitter'},
+              {id: 'fa-linkedin', name: 'LinkedIn'}
+            ]
+          },
         ],
-      }
+      },
+
+      init() {
+        this.on('change:attributes:type', this.handleTypeChange);
+      },
+
+      handleTypeChange() {
+        for (let i of this.getClasses()) {
+          this.removeClass(i);
+        }
+
+        this.addClass('fab');
+        this.addClass(`${this.getAttributes().type}`);
+      },
     }
   });
   
