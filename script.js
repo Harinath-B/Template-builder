@@ -401,3 +401,4 @@ editor.Panels.addPanel({
   ],
   
 });
+// script for menu item is not center aligned
