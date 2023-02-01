@@ -171,7 +171,7 @@ const myNewComponentTypes = editor => {
 
 const editor = grapesjs.init({
     container: '#gjs',
-    height: '600px',
+    height: '680px',
     width: 'auto',
     storageManager: false,
     plugins: [ myNewComponentTypes ],
