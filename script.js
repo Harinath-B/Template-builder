@@ -270,9 +270,11 @@ const editor = grapesjs.init({
       appendTo: '.styles-container',
       sectors: [
         {
+          open: true,
           buildProps: ['width', 'min-height', 'padding', 'background-color', 'color', 'font-size', 'font', 'font-weight', 'border-radius'],
           properties: [
                 {
+                  
                   id: 'font-size',
                   name: 'Font Size',
                   property: 'font-size',
@@ -296,45 +298,7 @@ const editor = grapesjs.init({
                 ]
                },
             ],
-        }
-        //   {
-        //   name: 'Dimension',
-        //   open: false,         
-        //   buildProps: ['width', 'min-height', 'padding'],
-        // },{
-        //   name: 'Extra',
-        //   open: false,
-        //   buildProps: ['background-color', 'color'],
-        // }, {
-        //   name: 'Font',
-        //   open: false,
-        //   buildProps: ['font-size', 'font', 'font-weight'],
-        //   properties: [
-        //     {
-        //       id: 'font-size',
-        //       name: 'Font Size',
-        //       property: 'font-size',
-        //       type: 'slider',
-        //       default: 20,
-        //       min: 1,
-        //       max: 50,
-        //    }, {
-        //     id: 'font',
-        //     name: 'Font',
-        //     property: 'font-family',
-        //     type: 'select',
-        //     defaults: 'Arial',
-
-        //     options : [
-        //       {value: 'Cambria'},
-        //       {value: 'Arial'},
-        //       {value: 'serif'},
-        //       {value: 'Georgia'},
-        //       {value: 'Helvetica'}
-        //     ]
-        //    },
-        //   ],
-        // }
+        }, 
       ]
     },   
   }
@@ -447,3 +411,5 @@ editor.Panels.addPanel({
   ],
   
 });
+
+document.getElementsByClassName('gjs-sm-sector-title')[0].remove();
