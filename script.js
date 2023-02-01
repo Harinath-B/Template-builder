@@ -26,12 +26,23 @@ const block_list = [
     
   }, {
     id: 'col3',
-    label: 'Columns -3',
+    label: 'Columns - 3',
     content: `<table style="height:150px; width:100%">
                   <tr>
                     <td style="width:33.3%"></td>
                     <td style="width:33.3%"></td>
                     <td style="width:33.3%"></td>
+                  </tr>
+                  </table>`,
+  }, {
+    id: 'col4',
+    label: 'Columns - 4',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
                   </tr>
                   </table>`,
   }, {
@@ -63,7 +74,12 @@ const block_list = [
   }, {
     id: 'menu',
     label: 'Menu',
-    content: `<ul class="menu"></ul>
+    content: `<ul class="menu">
+        <a style="margin: 5px;">Link</a>
+        <a style="margin: 5px;">Link</a>
+        <a style="margin: 5px;">Link</a>
+        <a style="margin: 5px;">Link</a>
+      </ul>
       <style>
         .menu {
           min-height:30px;
@@ -80,7 +96,7 @@ const block_list = [
     id: 'social',
     label: 'Socials',
     content: `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-      <a href="#" style="background: #f09433;" name="social" class="fab"></a>
+      <a href="#" name="social" class="fab"></a>
       <style>
         .social-cont {
           display: flex;
@@ -93,6 +109,7 @@ const block_list = [
           height: 30px;
           text-align: center;
           text-decoration: none;
+          background-color: #f09433;
         }
       </style>`,
   }
@@ -251,44 +268,73 @@ const editor = grapesjs.init({
 
     styleManager: {
       appendTo: '.styles-container',
-      sectors: [{
-          name: 'Dimension',
-          open: false,         
-          buildProps: ['width', 'min-height', 'padding'],
-        },{
-          name: 'Extra',
-          open: false,
-          buildProps: ['background-color', 'color'],
-        }, {
-          name: 'Font',
-          open: false,
-          buildProps: ['font-size', 'font', 'font-weight'],
+      sectors: [
+        {
+          buildProps: ['width', 'min-height', 'padding', 'background-color', 'color', 'font-size', 'font', 'font-weight', 'border-radius'],
           properties: [
-            {
-              id: 'font-size',
-              name: 'Font Size',
-              property: 'font-size',
-              type: 'slider',
-              default: 20,
-              min: 1,
-              max: 50,
-           }, {
-            id: 'font',
-            name: 'Font',
-            property: 'font-family',
-            type: 'select',
-            defaults: 'Arial',
-
-            options : [
-              {value: 'Cambria'},
-              {value: 'Arial'},
-              {value: 'serif'},
-              {value: 'Georgia'},
-              {value: 'Helvetica'}
-            ]
-           },
-          ],
+                {
+                  id: 'font-size',
+                  name: 'Font Size',
+                  property: 'font-size',
+                  type: 'slider',
+                  default: 20,
+                  min: 1,
+                  max: 50,
+               }, {
+                id: 'font',
+                name: 'Font',
+                property: 'font-family',
+                type: 'select',
+                defaults: 'Arial',
+    
+                options : [
+                  {value: 'Cambria'},
+                  {value: 'Arial'},
+                  {value: 'serif'},
+                  {value: 'Georgia'},
+                  {value: 'Helvetica'}
+                ]
+               },
+            ],
         }
+        //   {
+        //   name: 'Dimension',
+        //   open: false,         
+        //   buildProps: ['width', 'min-height', 'padding'],
+        // },{
+        //   name: 'Extra',
+        //   open: false,
+        //   buildProps: ['background-color', 'color'],
+        // }, {
+        //   name: 'Font',
+        //   open: false,
+        //   buildProps: ['font-size', 'font', 'font-weight'],
+        //   properties: [
+        //     {
+        //       id: 'font-size',
+        //       name: 'Font Size',
+        //       property: 'font-size',
+        //       type: 'slider',
+        //       default: 20,
+        //       min: 1,
+        //       max: 50,
+        //    }, {
+        //     id: 'font',
+        //     name: 'Font',
+        //     property: 'font-family',
+        //     type: 'select',
+        //     defaults: 'Arial',
+
+        //     options : [
+        //       {value: 'Cambria'},
+        //       {value: 'Arial'},
+        //       {value: 'serif'},
+        //       {value: 'Georgia'},
+        //       {value: 'Helvetica'}
+        //     ]
+        //    },
+        //   ],
+        // }
       ]
     },   
   }
@@ -401,4 +447,3 @@ editor.Panels.addPanel({
   ],
   
 });
-// script for menu item is not center aligned
