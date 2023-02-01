@@ -159,17 +159,15 @@ const myNewComponentTypes = editor => {
       },
 
       handleTypeChange() {
-        for (let i of this.getClasses()) {
-          this.removeClass(i);
-        }
-
-        this.addClass('fab');
+        if (this.getClasses()[1])
+          this.removeClass(this.getClasses()[1]);
         this.addClass(`${this.getAttributes().type}`);
       },
     }
   });
-  
 };
+
+//const projectId = getProjectId();
 
 const editor = grapesjs.init({
     container: '#gjs',
@@ -296,11 +294,23 @@ const editor = grapesjs.init({
                   {value: 'Georgia'},
                   {value: 'Helvetica'}
                 ]
-               },
+               }, {
+                id: 'border-radius',
+                name: 'Border Radius',
+                property: 'border-radius',
+                type: 'number'
+               }
             ],
         }, 
       ]
-    },   
+    }, 
+
+    storageManager: {
+      type: 'local',
+      options: {
+        local: { key: `gjsProject` }
+      }
+    },
   }
 );
 
