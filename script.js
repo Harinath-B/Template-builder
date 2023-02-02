@@ -148,7 +148,8 @@ const myNewComponentTypes = editor => {
               {id: 'fa-facebook', name: 'Facebook'},
               {id: 'fa-instagram', name: 'Instagram'},
               {id: 'fa-twitter', name: 'twitter'},
-              {id: 'fa-linkedin', name: 'LinkedIn'}
+              {id: 'fa-linkedin', name: 'LinkedIn'},
+              {id: 'fa-youtube', name: 'Youtube'},
             ]
           },
         ],
@@ -161,7 +162,7 @@ const myNewComponentTypes = editor => {
       handleTypeChange() {
         if (this.getClasses()[1])
           this.removeClass(this.getClasses()[1]);
-        this.addClass(`${this.getAttributes().type}`);
+          this.addClass(`${this.getAttributes().type}`);
       },
     }
   });
@@ -269,7 +270,7 @@ const editor = grapesjs.init({
       sectors: [
         {
           open: true,
-          buildProps: ['width', 'min-height', 'padding', 'background-color', 'color', 'font-size', 'font', 'font-weight', 'border-radius'],
+          buildProps: ['width', 'min-height', 'padding', 'margin', 'background-color', 'color', 'font-size', 'font', 'font-weight', 'border-radius', 'border-color'],
           properties: [
                 {
                   
@@ -294,12 +295,7 @@ const editor = grapesjs.init({
                   {value: 'Georgia'},
                   {value: 'Helvetica'}
                 ]
-               }, {
-                id: 'border-radius',
-                name: 'Border Radius',
-                property: 'border-radius',
-                type: 'number'
-               }
+               },
             ],
         }, 
       ]
