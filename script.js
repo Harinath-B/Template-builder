@@ -515,3 +515,6 @@ document.getElementsByClassName('gjs-sm-sector-title')[0].remove();
 
 const rowsEl = editor.BlockManager.render(rows_list, { external: true });
 document.getElementsByClassName('rows-container')[0].appendChild(rowsEl);
+<!-- 
+welcome to rec
+-->
