@@ -15,37 +15,6 @@ const block_list = [
     
     activate: true,
   }, {
-    id: 'col2',
-    label: 'Columns - 2',
-    content: `<table style="height:150px; width:100%">
-                  <tr>
-                    <td style="width:50%"></td>
-                    <td style="width:50%"></td>
-                  </tr>
-                  </table>`,
-    
-  }, {
-    id: 'col3',
-    label: 'Columns - 3',
-    content: `<table style="height:150px; width:100%">
-                  <tr>
-                    <td style="width:33.3%"></td>
-                    <td style="width:33.3%"></td>
-                    <td style="width:33.3%"></td>
-                  </tr>
-                  </table>`,
-  }, {
-    id: 'col4',
-    label: 'Columns - 4',
-    content: `<table style="height:150px; width:100%">
-                  <tr>
-                    <td style="width:25%"></td>
-                    <td style="width:25%"></td>
-                    <td style="width:25%"></td>
-                    <td style="width:25%"></td>
-                  </tr>
-                  </table>`,
-  }, {
     id: 'btn',
     label: 'Button',
     content: `<button contentEditable>Button</button>`,
@@ -113,8 +82,42 @@ const block_list = [
         }
       </style>`,
   }
-
 ];
+
+const rows_list = [
+  {
+    id: 'col2',
+    label: 'Columns - 2',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:50%"></td>
+                    <td style="width:50%"></td>
+                  </tr>
+                  </table>`,
+    
+  }, {
+    id: 'col3',
+    label: 'Columns - 3',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:33.3%"></td>
+                    <td style="width:33.3%"></td>
+                    <td style="width:33.3%"></td>
+                  </tr>
+                  </table>`,
+  }, {
+    id: 'col4',
+    label: 'Columns - 4',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
+                  </tr>
+                  </table>`,
+  },
+]
 
 const myNewComponentTypes = editor => {
   editor.DomComponents.addType('menu-item', {
@@ -168,8 +171,6 @@ const myNewComponentTypes = editor => {
   });
 };
 
-//const projectId = getProjectId();
-
 const editor = grapesjs.init({
     container: '#gjs',
     height: '680px',
@@ -179,6 +180,8 @@ const editor = grapesjs.init({
     blockManager: {
       appendTo: '.blocks-container',
       blocks: block_list,
+      // appendTo: '.rows-container',
+      // blocks: block_list,
     },
     layerManager: {
         appendTo: '.layers-container'
@@ -252,6 +255,12 @@ const editor = grapesjs.init({
           active: true,
           label: 'Blocks',
           command: 'show-blocks',
+          togglable: false,
+        }, {
+          id: 'show-rows',
+          active: true,
+          label: 'Rows',
+          command: 'show-rows',
           togglable: false,
         }],
       }]
@@ -366,6 +375,20 @@ editor.Commands.add('show-styles', {
   },
 });
 
+editor.Commands.add('show-rows', {
+  getRowEl(editor) { return editor.getContainer().closest('.editor-row'); },
+  getStyleEl(row) { return row.querySelector('.rows-container') },
+
+  run(editor, sender) {
+    const smEl = this.getStyleEl(this.getRowEl(editor));
+    smEl.style.display = '';
+  },
+  stop(editor, sender) {
+    const smEl = this.getStyleEl(this.getRowEl(editor));
+    smEl.style.display = 'none';
+  },
+});
+
 editor.Commands.add('show-blocks', {
   getRowEl(editor) { return editor.getContainer().closest('.editor-row'); },
   getStyleEl(row) { return row.querySelector('.blocks-container') },
@@ -419,3 +442,6 @@ editor.Panels.addPanel({
 });
 
 document.getElementsByClassName('gjs-sm-sector-title')[0].remove();
+
+const rowsEl = editor.BlockManager.render(rows_list, { external: true });
+document.getElementsByClassName('rows-container')[0].appendChild(rowsEl);
