@@ -270,7 +270,7 @@ const editor = grapesjs.init({
       sectors: [
         {
           open: true,
-          buildProps: ['width', 'min-height', 'padding', 'margin', 'background-color', 'color', 'font-size', 'font', 'font-weight', 'border-radius', 'border-color'],
+          buildProps: ['width', 'min-height', 'padding', 'margin', 'background-color', 'color', 'font-size', 'font', 'font-weight', 'border', 'border-radius', 'border-color'],
           properties: [
                 {
                   
