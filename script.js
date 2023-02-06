@@ -107,7 +107,7 @@ const rows_list = [
     
   }, {
     id: 'col2-3',
-    label: 'Columns - 2(33 - 66)',
+    label: 'Columns - 2(33 - 67)',
     content: `<table style="height:150px; width:100%">
                   <tr>
                     <td style="width:33.3%"></td>
@@ -146,7 +146,7 @@ const rows_list = [
                   </tr>
                   </table>`,
   }, {
-    id: 'col3',
+    id: 'col3-2',
     label: 'Columns - 3(25-25-50)',
     content: `<table style="height:150px; width:100%">
                   <tr>
@@ -156,7 +156,7 @@ const rows_list = [
                   </tr>
                   </table>`,
   }, {
-    id: 'col3',
+    id: 'col3-3',
     label: 'Columns - 3(25-50-25)',
     content: `<table style="height:150px; width:100%">
                   <tr>
@@ -166,7 +166,7 @@ const rows_list = [
                   </tr>
                   </table>`,
   }, {
-    id: 'col3',
+    id: 'col3-4',
     label: 'Columns - 3(50-25-25)',
     content: `<table style="height:150px; width:100%">
                   <tr>
