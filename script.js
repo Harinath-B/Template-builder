@@ -86,8 +86,8 @@ const block_list = [
 
 const rows_list = [
   {
-    id: 'col2',
-    label: 'Columns - 2',
+    id: 'col2-1',
+    label: 'Columns - 2(50 - 50)',
     content: `<table style="height:150px; width:100%">
                   <tr>
                     <td style="width:50%"></td>
@@ -96,13 +96,83 @@ const rows_list = [
                   </table>`,
     
   }, {
-    id: 'col3',
-    label: 'Columns - 3',
+    id: 'col2-2',
+    label: 'Columns - 2(25 - 75)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:25%"></td>
+                    <td style="width:75%"></td>
+                  </tr>
+                  </table>`,
+    
+  }, {
+    id: 'col2-3',
+    label: 'Columns - 2(33 - 66)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:33.3%"></td>
+                    <td style="width:66.7%"></td>
+                  </tr>
+                  </table>`,
+    
+  }, {
+    id: 'col2-4',
+    label: 'Columns - 2(67 - 33)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:66.7%"></td>
+                    <td style="width:33.3%"></td>
+                  </tr>
+                  </table>`,
+    
+  }, {
+    id: 'col2-5',
+    label: 'Columns - 2(75 - 25)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:75%"></td>
+                    <td style="width:25%"></td>
+                  </tr>
+                  </table>`,
+    
+  }, {
+    id: 'col3-1',
+    label: 'Columns - 3(33-33-33)',
     content: `<table style="height:150px; width:100%">
                   <tr>
                     <td style="width:33.3%"></td>
                     <td style="width:33.3%"></td>
                     <td style="width:33.3%"></td>
+                  </tr>
+                  </table>`,
+  }, {
+    id: 'col3',
+    label: 'Columns - 3(25-25-50)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
+                    <td style="width:50%"></td>
+                  </tr>
+                  </table>`,
+  }, {
+    id: 'col3',
+    label: 'Columns - 3(25-50-25)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:25%"></td>
+                    <td style="width:50%"></td>
+                    <td style="width:25%"></td>
+                  </tr>
+                  </table>`,
+  }, {
+    id: 'col3',
+    label: 'Columns - 3(50-25-25)',
+    content: `<table style="height:150px; width:100%">
+                  <tr>
+                    <td style="width:50%"></td>
+                    <td style="width:25%"></td>
+                    <td style="width:25%"></td>
                   </tr>
                   </table>`,
   }, {
