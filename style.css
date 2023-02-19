@@ -1,140 +1,140 @@
 html,
 body {
-    min-height: 100vh;
-    padding: 0;
+  min-height: 100vh;
+  padding: 0;
 }
 
 #gjs {
-    border: 3px solid #000000;
+  border: 3px solid #000000;
 }
 
 .gjs-cv-canvas {
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fefefee7;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fefefee7;
 }
 
 .gjs-block {
-    width: 300px;
-    height: 90px;
-    min-height: auto;
-    background-color: #f8f7f796;
+  width: 300px;
+  height: 90px;
+  min-height: auto;
+  background-color: #f8f7f796;
 }
 
 .panel__top {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    position: initial;
-    justify-content: center;
-    justify-content: space-between;
-    background-color: rgba(222, 242, 250, 0.85);
+  padding: 0;
+  width: 100%;
+  display: flex;
+  position: initial;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: rgba(222, 242, 250, 0.85);
 }
 
 .panel__basic-actions {
-    position: initial;
-    background-color: rgba(222, 242, 250, 0.85);
+  position: initial;
+  background-color: rgba(222, 242, 250, 0.85);
 }
 
 .panel__devices {
-    position: initial;
-    background-color: rgba(222, 242, 250, 0.85);
+  position: initial;
+  background-color: rgba(222, 242, 250, 0.85);
 }
 
 .editor-row {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    flex-wrap: nowrap;
-    /* height: 300px; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  /* height: 300px; */
 }
 
 .editor-canvas {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .panel__right {
-    flex-basis: 230px;
-    position: relative;
-    height: 680px;
-    overflow-y: auto;
-    background-color: #fff;
+  flex-basis: 230px;
+  position: relative;
+  height: 680px;
+  overflow-y: auto;
+  background-color: #fff;
 }
 
 .panel__switcher {
-    position: initial;
-    background-color: rgba(222, 242, 250, 0.85);
+  position: initial;
+  background-color: rgba(222, 242, 250, 0.85);
 }
 
 .col2 {
-    margin: 3px;
-    width: 50%;
-    height: 50%;
-    color: rgb(199, 199, 199);
+  margin: 3px;
+  width: 50%;
+  height: 50%;
+  color: rgb(199, 199, 199);
 }
 
 .gjs-two-color {
-    color: #060606;
-    /* background-color: #f4f4f4; */
+  color: #060606;
+  /* background-color: #f4f4f4; */
 }
 
 .gjs-blocks-c {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: #fff;
 }
 
 .gjs-sm-sector {
-    clear: both;
-    font-weight: lighter;
-    text-align: left;
-    background-color: aliceblue;
+  clear: both;
+  font-weight: lighter;
+  text-align: left;
+  background-color: aliceblue;
 }
 
 .gjs-category-title,
 .gjs-layer-title,
 .gjs-block-category .gjs-title,
 .gjs-sm-sector-title {
-    font-weight: lighter;
-    background-color: rgba(0, 0, 0, .1);
-    letter-spacing: 1px;
-    padding: 9px 10px 9px 20px;
-    border-bottom: 1px solid rgb(2 2 2 / 25%);
-    text-align: left;
-    position: relative;
-    cursor: pointer;
-    background-color: #f2f0f0f7;
+  font-weight: lighter;
+  background-color: rgba(0, 0, 0, .1);
+  letter-spacing: 1px;
+  padding: 9px 10px 9px 20px;
+  border-bottom: 1px solid rgb(2 2 2 / 25%);
+  text-align: left;
+  position: relative;
+  cursor: pointer;
+  background-color: #f2f0f0f7;
 }
 
 .gjs-clm-tags {
-    font-size: .75rem;
-    padding: 10px 5px;
-    background-color: #ededed96;
+  font-size: .75rem;
+  padding: 10px 5px;
+  background-color: #ededed96;
 }
 
 .gjs-sm-properties {
-    font-size: .75rem;
-    padding: 10px 5px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: #ededed96;
+  font-size: .75rem;
+  padding: 10px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ededed96;
 }
 
 .gjs-trt-traits {
-    font-size: .75rem;
-    background-color: #ededed96;
+  font-size: .75rem;
+  background-color: #ededed96;
 }
 
 .editor-container .chatgpt {
-    background-color: #007bff;
-    color: #fff;
-    height: 300px;
-    width: 300px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  cursor: pointer;
 }
