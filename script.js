@@ -326,7 +326,7 @@ const myNewComponentTypes = editor => {
         this.set("toolbar", toolbar);
       }
     }, {
-      isComponent: function(el) {
+      isComponent: el => {
         if (typeof el.hasAttribute == "function" && el.hasAttribute("data-html-code")) {
           return {
             type: "html-code"
@@ -390,7 +390,7 @@ const editor = grapesjs.init({
         }, {
           id: 'custom-frame',
           className: 'fa fa-arrows-alt',
-          command: 'custom',
+          command: 'customize-width',
           attributes: {
             title: 'Customize Frame',
             style: 'margin:0 auto;',
@@ -535,51 +535,62 @@ editor.RichTextEditor.add('unorderedList', {
 });
 
 editor.Commands.add("open-html-code-editor", {
-run: function(editor, sender, data) {
-  var component = editor.getSelected();
-
-  var codeViewer = editor.CodeManager.getViewer("CodeMirror").clone();
-  codeViewer.set({
-    codeName: "htmlmixed",
-    theme: "hopscotch",
-    readOnly: false
-  });
-
-  var modalContent = document.createElement("div");
-
-  var editorTextArea = document.createElement("textarea");
-
-  var saveButton = document.createElement("button");
-  saveButton.innerHTML = "Save";
-  saveButton.className = "gjs-btn-prim";
-  saveButton.style = "margin-top: 8px;";
-  saveButton.onclick = function() {
-    component.set("content", "");
-    component.components(codeViewer.editor.getValue());
-    editor.Modal.close();
-  };
-
-  modalContent.appendChild(editorTextArea);
-  modalContent.appendChild(saveButton);
-
-  codeViewer.init(editorTextArea);
-
-  var htmlContent = document.createElement("div");
-  htmlContent.innerHTML = component.toHTML();
-  htmlContent = htmlContent.firstChild.innerHTML;
-  codeViewer.setContent(htmlContent);
-
-  editor.Modal
-    .setTitle("Edit HTML")
-    .setContent(modalContent)
-    .open();
-
-  codeViewer.editor.refresh();
-}
+  run: (editor, sender, data) => {
+    var component = editor.getSelected();
+  
+    var codeViewer = editor.CodeManager.getViewer("CodeMirror").clone();
+    codeViewer.set({
+      codeName: "htmlmixed",
+      theme: "hopscotch",
+      readOnly: false
+    });
+  
+    var modalContent = document.createElement("div");
+  
+    var editorTextArea = document.createElement("textarea");
+  
+    var saveButton = document.createElement("button");
+    saveButton.innerHTML = "Save";
+    saveButton.className = "gjs-btn-prim";
+    saveButton.style = "margin-top: 8px;";
+    saveButton.onclick = () => {
+      component.set("content", "");
+      component.components(codeViewer.editor.getValue());
+      editor.Modal.close();
+    };
+  
+    modalContent.appendChild(editorTextArea);
+    modalContent.appendChild(saveButton);
+  
+    codeViewer.init(editorTextArea);
+  
+    var htmlContent = document.createElement("div");
+    htmlContent.innerHTML = component.toHTML();
+    htmlContent = htmlContent.firstChild.innerHTML;
+    codeViewer.setContent(htmlContent);
+  
+    editor.Modal
+      .setTitle("Edit HTML")
+      .setContent(modalContent)
+      .open();
+  
+    codeViewer.editor.refresh();
+  }
 });
 
 editor.Commands.add('set-device-desktop', {
   run: editor => editor.setDevice('Desktop')
+});
+
+editor.Commands.add('customize-width', {
+  run: (editor, sender) => {
+    var width = prompt('Enter the new width (in pixels):');
+    var frame = editor.getWrapper();
+    frame.setStyle({
+      width: width + 'px',
+      margin: '0 auto',
+    });
+  },
 });
 
 editor.Commands.add('set-device-mobile', {
