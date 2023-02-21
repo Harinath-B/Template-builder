@@ -23,7 +23,7 @@ const block_list = [{
   {
     id: 'btn',
     label: '<div class="panel__body sidebar__module  SidebarModule_sidebarModule__2aVdj " data-qa="sidebar-module"><div class="image-drag SidebarModule_imageDrag__z7ned"><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 51 30" class="SidebarModule_icon__1QNtt" width="36" height="36"><path d="M46.6,29.2l1.3-.7-2.1-4h3.6L40,15.1V28.4l2.7-2.7L45,30.1l1.6-.9ZM39,12.69l1.71,1.71,6.51,6.51h1A2.83,2.83,0,0,0,51,18.07V2.83A2.83,2.83,0,0,0,48.17,0H2.83A2.83,2.83,0,0,0,0,2.83V18.07A2.83,2.83,0,0,0,2.83,20.9H39V12.69ZM8.33,9.22H42.67v2.45H8.33Z"></path></svg></div><div class="body__title body__title--cs SidebarModule_sidebarModuleTitle__TnK1l"><span>Button</span></div></div>',
-    content: `<a href="#" class="button">Click me</a>
+    content: `<div> <a href="#" class="button">Click me  </a> </div>
       <style>
         a.button {
           display: inline-block;
