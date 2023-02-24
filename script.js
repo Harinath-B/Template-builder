@@ -23,7 +23,7 @@ const block_list = [{
   {
     id: 'btn',
     label: '<div class="panel__body sidebar__module  SidebarModule_sidebarModule__2aVdj " data-qa="sidebar-module"><div class="image-drag SidebarModule_imageDrag__z7ned"><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 51 30" class="SidebarModule_icon__1QNtt" width="36" height="36"><path d="M46.6,29.2l1.3-.7-2.1-4h3.6L40,15.1V28.4l2.7-2.7L45,30.1l1.6-.9ZM39,12.69l1.71,1.71,6.51,6.51h1A2.83,2.83,0,0,0,51,18.07V2.83A2.83,2.83,0,0,0,48.17,0H2.83A2.83,2.83,0,0,0,0,2.83V18.07A2.83,2.83,0,0,0,2.83,20.9H39V12.69ZM8.33,9.22H42.67v2.45H8.33Z"></path></svg></div><div class="body__title body__title--cs SidebarModule_sidebarModuleTitle__TnK1l"><span>Button</span></div></div>',
-    content: `<div> <a href="#" class="button">Click me  </a> </div>
+    content: `<a href="#" class="button">Click me</a>
       <style>
         a.button {
           display: inline-block;
@@ -84,9 +84,9 @@ const block_list = [{
     label: '<div class="panel__body sidebar__module  SidebarModule_sidebarModule__2aVdj " data-qa="sidebar-module"><div class="image-drag SidebarModule_imageDrag__z7ned"><svg x="0px" y="0px" viewBox="0 0 448 512" xml:space="preserve" class="SidebarModule_icon__1QNtt" width="36" height="36"><path d="M16,150h416c8.8,0,16-7.2,16-16v-20c0-8.8-7.2-15-16-15H16c-8.8,0-16,6.2-16,15v20C0,142.8,7.2,150,16,150z M16,282h416 c8.8,0,16-7.2,16-16v-20c0-8.8-7.2-16-16-16H16c-8.8,0-16,7.2-16,16v20C0,274.8,7.2,282,16,282z M16,414h416c8.8,0,16-7.2,16-16v-20 c0-8.8-7.2-16-16-16H16c-8.8,0-16,7.2-16,16v20C0,406.8,7.2,414,16,414z"></path></svg></div><div class="body__title body__title--cs SidebarModule_sidebarModuleTitle__TnK1l"><span>Menu Item</span></div></div>',
     content: '<a name="menu-item" style="margin: 5px;">Link</a>',
   }, {
-    id: 'social',
-    label: '<div class="panel__body sidebar__module  SidebarModule_sidebarModule__2aVdj " data-qa="sidebar-module"><div class="image-drag SidebarModule_imageDrag__z7ned"><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 35 35" class="SidebarModule_icon__1QNtt" width="36" height="36"><path d="M17.5,0A17.5,17.5,0,1,0,35,17.5,17.46,17.46,0,0,0,17.5,0Zm0,33A15.5,15.5,0,1,1,33,17.5,15.58,15.58,0,0,1,17.5,33ZM18,17h9v1H18v9H17V18H8V17h9V8h1Z"></path></svg></div><div class="body__title body__title--cs SidebarModule_sidebarModuleTitle__TnK1l"><span>Social</span></div></div>',
-    content: `
+        id: 'social',
+        label: '<div class="panel__body sidebar__module  SidebarModule_sidebarModule__2aVdj " data-qa="sidebar-module"><div class="image-drag SidebarModule_imageDrag__z7ned"><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 35 35" class="SidebarModule_icon__1QNtt" width="36" height="36"><path d="M17.5,0A17.5,17.5,0,1,0,35,17.5,17.46,17.46,0,0,0,17.5,0Zm0,33A15.5,15.5,0,1,1,33,17.5,15.58,15.58,0,0,1,17.5,33ZM18,17h9v1H18v9H17V18H8V17h9V8h1Z"></path></svg></div><div class="body__title body__title--cs SidebarModule_sidebarModuleTitle__TnK1l"><span>Social</span></div></div>',
+        content: `
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
       <a href="#" name="social" class="social-icon"></a>
       <style>
@@ -104,25 +104,119 @@ const block_list = [{
           text-decoration: none;
           background-color: #f09433;
         }
-        .facebook-icon {
-          content: url('face.png');
+        .facebook-red {
+          content: url('social_icons/face-red.jpg');
+          display: inline-block;
+
+        }
+        .facebook-org {
+          content: url('social_icons/face-org.jpg');
+          display: inline-block;
+
+        }
+        .facebook-blk{
+          content: url('social_icons/face-blk.jpg');
           display: inline-block;
         }
-        .instagram-icon {
-          background-color: #FF0047;
+        .facebook-tpt{
+          content: url('social_icons/face-tpt.jpg');
+          display: inline-block;
         }
-        .twitter-icon {
-          background-color: #0090FF;
+        .facebook-blue{
+          content: url('social_icons/face-blue.jpg');
+          display: inline-block;
         }
-        .linkedin-icon {
-          background-color: #005FFF;
+        .instagram-ng {
+          content: url('social_icons/insta-ng.jpg');
+          display: inline-block;
         }
-        .youtube-icon {
-          background-color: #050505;
+        .instagram-blue {
+          content: url('social_icons/insta-blue.jpg');
+          display: inline-block;
+        }
+        .instagram-gray {
+          content: url('social_icons/insta-gray.jpg');
+          display: inline-block;
+        }
+        .instagram-blk {
+          content: url('social_icons/insta-blk.jpg');
+          display: inline-block;
+        }
+        .instagram-org {
+          content: url('social_icons/insta-org.jpg');
+          display: inline-block;
+        }
+        .instagram-red {
+          content: url('social_icons/insta-red.jpg');
+          display: inline-block;
+        }
+        .twitter-blk {
+          content: url('social_icons/twr-blk.jpg');
+          display: inline-block;
+        }
+        .twitter-blue {
+          content: url('social_icons/twr-blue.jpg');
+          display: inline-block;
+        }
+        .twitter-green {
+          content: url('social_icons/twr-green.jpg');
+          display: inline-block;
+        }
+        .twitter-org {
+          content: url('social_icons/twr-org.jpg');
+          display: inline-block;
+        }
+        .twitter-red {
+          content: url('social_icons/twr-red.jpg');
+          display: inline-block;
+        }
+        .linkedin-blk {
+          content: url('social_icons/ln-blk.jpg');
+          display: inline-block;
+        }
+        .linkedin-blue {
+          content: url('social_icons/ln-blue.jpg');
+          display: inline-block;
+        }
+        .linkedin-green {
+          content: url('social_icons/ln-green.jpg');
+          display: inline-block;
+        }
+        .linkedin-org {
+          content: url('social_icons/ln-org.jpg');
+          display: inline-block;
+        }
+        .linkedin-red {
+          content: url('social_icons/ln-red.jpg');
+          display: inline-block;
+        }
+        .youtube-blk{
+          content: url('social_icons/yt-blk.jpg');
+          display: inline-block;
+        }
+        .youtube-blue {
+          content: url('social_icons/yt-blue.jpg');
+          display: inline-block;
+        }
+        .youtube-gray {
+          content: url('social_icons/yt-gray.jpg');
+          display: inline-block;
+        }
+        .youtube-green {
+          content: url('social_icons/yt-green.jpg');
+          display: inline-block;
+        }
+        .youtube-org {
+          content: url('social_icons/yt-org.jpg');
+          display: inline-block;
+        }
+        .youtube-trt {
+          content: url('social_icons/yt-trt.jpg');
+          display: inline-block;
         }
       </style>
     `,
-  }, {
+    }, {
     id: 'html-block',
     label: `<div class="image-drag SidebarModule_imageDrag__z7ned"><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 31 38" class="SidebarModule_icon__1QNtt" width="36" height="36"><path d="M30,0H9.4a.91.91,0,0,0-.7.3L.3,7.9a.91.91,0,0,0-.3.7V37a.94.94,0,0,0,1,1H30a1,1,0,0,0,1-1V1A.94.94,0,0,0,30,0ZM7.7,3.91l.5-.46V8H3.7ZM29,36H2V10H9.2a.94.94,0,0,0,1-1V2H29ZM13.8,30l-1-.2L17,13.5l1,.2ZM11.4,17.6,7.7,21.3,11.4,25l-.7.9L6.6,21.8c-.1-.1-.1-.2-.1-.4s.1-.3.1-.4l4.1-4.1Zm8,7.6,3.7-3.7-3.7-3.7.7-.7,4.1,4.1c.1.1.1.2.1.4s-.1.3-.1.4l-4.1,3.9Z"></path></svg><div class="body__title body__title--cs SidebarModule_sidebarModuleTitle__TnK1l"><span>HTML code</span></div></div>`,
     content: '<div name="html-code" data-html-code>Edit my HTML content</div>'
@@ -273,24 +367,115 @@ const myNewComponentTypes = editor => {
             type: 'select',
             name: 'type',
             options: [{
-                id: 'facebook-icon',
-                name: 'Facebook'
+                id: 'facebook-red',
+                name: 'Facebook-Red'
+              }, {
+                id: 'facebook-org',
+                name: 'Facebook-Org'
               },
               {
-                id: 'instagram-icon',
-                name: 'Instagram'
+                id: 'facebook-blk',
+                name: 'Facebook-blk'
               },
               {
-                id: 'twitter-icon',
-                name: 'twitter'
+                id: 'facebook-blue',
+                name: 'Facebook-blue'
               },
               {
-                id: 'linkedin-icon',
-                name: 'LinkedIn'
+                id: 'facebook-red',
+                name: 'Facebook-red'
               },
               {
-                id: 'youtube-icon',
-                name: 'Youtube'
+                id: 'facebook-tpt',
+                name: 'Facebook-tpt'
+              },
+              {
+                id: 'instagram-ng',
+                name: 'Instagram-ng'
+              },
+              {
+                id: 'instagram-blk',
+                name: 'Instagram-blk'
+              },
+              {
+                id: 'instagram-blue',
+                name: 'Instagram-blue'
+              },
+              {
+                id: 'instagram-gray',
+                name: 'Instagram-gray'
+              },
+              {
+                id: 'instagram-org',
+                name: 'Instagram-org'
+              },
+              {
+                id: 'instagram-red',
+                name: 'Instagram-red'
+              }, 
+              {
+                id: 'twitter-blk',
+                name: 'twitter-blk'
+              }, 
+              {
+                id: 'twitter-blue',
+                name: 'twitter-blue'
+              },
+              {
+                id: 'twitter-green',
+                name: 'twitter-green'
+              },
+              {
+                id: 'twitter-org',
+                name: 'twitter-org'
+              },
+              {
+                id: 'twitter-red',
+                name: 'twitter-red'
+              },
+              {
+                id: 'linkedin-blk',
+                name: 'LinkedIn-blk'
+              },
+              {
+                id: 'linkedin-blue',
+                name: 'LinkedIn-blue'
+              },
+              {
+                id: 'linkedin-green',
+                name: 'LinkedIn-green'
+              },
+              {
+                id: 'linkedin-org',
+                name: 'LinkedIn-org'
+              },
+              {
+                id: 'linkedin-red',
+                name: 'LinkedIn-red'
+              },
+              {
+                id: 'youtube-blk',
+                name: 'Youtube-blk'
+              },
+              {
+                id: 'youtube-blue',
+                name: 'Youtube-blue'
+              },
+              {
+                id: 'youtube-gray',
+                name: 'Youtube-gray'
+              },
+              {
+                id: 'youtube-green',
+                name: 'Youtube-green'
+              },
+              {
+                id: 'youtube-org',
+                name: 'Youtube-org'
+              },
+              {
+                id: 'youtube-trt',
+                name: 'Youtube-trt'
               },
             ]
           },
@@ -733,6 +918,6 @@ editor.Panels.addPanel({
 document.getElementsByClassName('gjs-sm-sector-title')[0].remove();
 
 const rowsEl = editor.BlockManager.render(rows_list, {
-external: true
+  external: true
 });
 document.getElementsByClassName('rows-container')[0].appendChild(rowsEl);
